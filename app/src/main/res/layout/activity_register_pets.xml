@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activities.RegisterPetsActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp">
+
+
+            <ProgressBar
+                android:id="@+id/progressbarRegister"
+                style="?android:attr/progressBarStyleLarge"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:visibility="gone"
+                android:layout_gravity="center"
+                tools:visibility="gone"
+                android:layout_marginTop="150dp"
+                android:layout_marginBottom="250dp"/>
+            <LinearLayout
+                android:id="@+id/contentRegister"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/inputNombrePet"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="16dp"
+                        android:drawableStart="@drawable/ic_pets_black_24dp"
+                        android:drawablePadding="7dp"
+                        android:textSize="16sp"
+                        android:hint="@string/ingrese_el_nombre_de_su_mascota"
+                        android:inputType="text"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/inputRazaPet"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="16dp"
+                        android:drawableStart="@drawable/ic_pets_black_24dp"
+                        android:drawablePadding="7dp"
+                        android:textSize="16sp"
+                        android:hint="@string/ingrese_la_raza_de_su_mascota"
+                        android:inputType="textEmailAddress"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+                <com.google.android.material.textfield.TextInputLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <EditText
+                        android:id="@+id/inputEdadPet"
+                        android:layout_width="280dp"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:layout_marginBottom="16dp"
+                        android:drawableStart="@drawable/ic_pets_black_24dp"
+                        android:drawablePadding="7dp"
+                        android:textSize="16sp"
+                        android:hint="@string/ingrese_la_edad_de_su_mascota"
+                        android:inputType="textPassword"
+                        android:maxLines="1" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <de.hdodenhof.circleimageview.CircleImageView
+                    android:layout_width="200dp"
+                    android:layout_height="200dp"
+                    android:layout_gravity="center"
+                    android:src="@drawable/pet"
+                    android:layout_marginTop="10dp"/>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/floatingActionButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:src="@drawable/ic_edit_black_24dp" />
+
+                <Button
+                    android:id="@+id/registerButtonPet"
+                    android:layout_width="280dp"
+                    android:onClick="callRegisterPet"
+                    android:layout_height="wrap_content"
+                    android:text="@string/registrar_mascota"
+                    android:layout_gravity="center"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold"
+                    android:layout_margin="8dp"
+                    style="@style/Widget.AppCompat.Button.Colored"
+                    />
+
+            </LinearLayout>
+        </LinearLayout>
+
+    </ScrollView>
+
+
+</LinearLayout>
