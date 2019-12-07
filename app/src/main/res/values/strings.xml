@@ -8,4 +8,6 @@
     <string name="ingrese_la_edad_de_su_mascota">Ingrese la edad de su mascota</string>
     <string name="ingrese_la_raza_de_su_mascota">Ingrese la raza de su mascota</string>
     <string name="ingrese_el_nombre_de_su_mascota">Ingrese el nombre de su mascota</string>
+    <string name="bienbenido">Bienbenido usuario</string>
+    <string name="mis_mascotas">Mis mascotas</string>
 </resources>

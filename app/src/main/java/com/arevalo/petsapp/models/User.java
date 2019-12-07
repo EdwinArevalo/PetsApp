@@ -11,8 +11,7 @@ public class User {
     private String userpassword;
     private List<Pet> pets = new ArrayList<>();
 
-    public User(Long userid, String usernames, String useremail, String userpassword) {
-        this.userid = userid;
+    public User(String usernames, String useremail, String userpassword) {
         this.usernames = usernames;
         this.useremail = useremail;
         this.userpassword = userpassword;
