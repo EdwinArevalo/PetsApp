@@ -38,7 +38,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
-                        android:id="@+id/inputNombrePet"
+                        android:id="@+id/inputNamePet"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -54,7 +54,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
-                        android:id="@+id/inputRazaPet"
+                        android:id="@+id/inputRacePet"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -63,14 +63,14 @@
                         android:drawablePadding="7dp"
                         android:textSize="16sp"
                         android:hint="@string/ingrese_la_raza_de_su_mascota"
-                        android:inputType="textEmailAddress"
+                        android:inputType="text"
                         android:maxLines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
                 <com.google.android.material.textfield.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
                     <EditText
-                        android:id="@+id/inputEdadPet"
+                        android:id="@+id/inputAgePet"
                         android:layout_width="280dp"
                         android:layout_height="wrap_content"
                         android:layout_gravity="center"
@@ -79,7 +79,7 @@
                         android:drawablePadding="7dp"
                         android:textSize="16sp"
                         android:hint="@string/ingrese_la_edad_de_su_mascota"
-                        android:inputType="textPassword"
+                        android:inputType="text"
                         android:maxLines="1" />
                 </com.google.android.material.textfield.TextInputLayout>
 
@@ -91,6 +91,7 @@
                     android:layout_margin="10dp">
 
                     <de.hdodenhof.circleimageview.CircleImageView
+                        android:id="@+id/inputPhotoPet"
                         android:layout_width="200dp"
                         android:layout_height="200dp"
                         android:layout_gravity="center"
@@ -100,10 +101,11 @@
                         android:id="@+id/floatingActionButton"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_gravity="center"
+                        android:layout_alignParentBottom="true"
                         android:layout_centerHorizontal="true"
-                        android:src="@drawable/ic_edit_black_24dp"
-                        android:layout_alignParentBottom="true"/>
+                        android:layout_gravity="center"
+                        android:onClick="takePicture"
+                        android:src="@drawable/ic_camera_black_24dp" />
                 </RelativeLayout>
 
                 <Button

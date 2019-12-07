@@ -31,16 +31,18 @@ public interface ApiService {
 
     @FormUrlEncoded
     @POST("/pets")
-    Call<Pet> createProducto(@Field("nombre") String nombre,
-                             @Field("precio") String precio,
-                             @Field("detalles") String detalles
+    Call<Pet> createPet(@Field("petname") String petname,
+                        @Field("petrace") String petrace,
+                        @Field("petage") String petage,
+                        @Field("petuser") Long petuser
     );
 
     @Multipart
     @POST("/pets")
-    Call<Pet> createProducto(@Part("nombre") RequestBody nombre,
-                             @Part("precio") RequestBody precio,
-                             @Part("detalles") RequestBody detalles,
-                             @Part MultipartBody.Part imagen
+    Call<Pet> createPet(@Part("petname") RequestBody petname,
+                        @Part("petrace") RequestBody petrace,
+                        @Part("petage") RequestBody petage,
+                        @Part("petuser") RequestBody petuser,
+                        @Part MultipartBody.Part image
     );
 }

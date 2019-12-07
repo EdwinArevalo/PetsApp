@@ -25,7 +25,7 @@
         android:paddingLeft="8dp">
 
         <de.hdodenhof.circleimageview.CircleImageView
-            android:id="@+id/imagenSede"
+            android:id="@+id/petPhoto"
             android:layout_width="80dp"
             android:layout_height="80dp"
             android:layout_alignParentStart="true"
@@ -39,7 +39,7 @@
             android:id="@+id/pet_name"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/imagenSede"
+            android:layout_toEndOf="@+id/petPhoto"
             android:drawableLeft="@drawable/ic_pets_black_24dp"
             android:drawablePadding="5dp"
             android:textStyle="bold"
@@ -50,7 +50,7 @@
             android:id="@+id/pet_raza"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/imagenSede"
+            android:layout_toEndOf="@+id/petPhoto"
             android:layout_below="@+id/pet_name"
             android:drawableLeft="@drawable/ic_pets_black_24dp"
             android:drawablePadding="5dp"
@@ -63,7 +63,7 @@
             android:id="@+id/pet_age"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_toEndOf="@+id/imagenSede"
+            android:layout_toEndOf="@+id/petPhoto"
             android:layout_below="@+id/pet_raza"
             android:drawableLeft="@drawable/ic_pets_black_24dp"
             android:drawablePadding="5dp"

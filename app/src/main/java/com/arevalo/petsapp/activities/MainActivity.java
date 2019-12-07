@@ -1,6 +1,7 @@
 package com.arevalo.petsapp.activities;
 
 import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
@@ -38,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     private TextView welcome;
 
     FloatingActionButton goRegisterPet;
-    final int REQUEST_CODE = 100;
+    private static final int REQUEST_REGISTER = 100;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -50,7 +51,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this,RegisterPetsActivity.class);
-                startActivityForResult(intent,REQUEST_CODE);
+                startActivityForResult(intent,REQUEST_REGISTER);
             }
         });
 
@@ -140,4 +141,11 @@ public class MainActivity extends AppCompatActivity {
         finish();
     }
 
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+        if(requestCode == REQUEST_REGISTER) {
+            initialize();
+        }
+    }
 }
