@@ -1,9 +1,20 @@
 package com.arevalo.petsapp.services;
+import android.content.Context;
+import android.content.SharedPreferences;
+import android.preference.PreferenceManager;
+import android.util.Log;
+
 import com.arevalo.petsapp.BuildConfig;
+import com.squareup.picasso.Picasso;
+
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.util.concurrent.TimeUnit;
+
+import okhttp3.Interceptor;
 import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 import okhttp3.ResponseBody;
 import okhttp3.logging.HttpLoggingInterceptor;
 import retrofit2.Converter;
@@ -44,6 +55,5 @@ public class ApiServiceGenerator {
             return new ApiError("Error en el servicio");
         }
     }
-
 
 }

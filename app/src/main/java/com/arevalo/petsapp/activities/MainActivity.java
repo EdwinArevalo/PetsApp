@@ -61,7 +61,6 @@ public class MainActivity extends AppCompatActivity {
         petsList.setVisibility(View.GONE);
         progressBar.setVisibility(View.VISIBLE);
         petsList.setLayoutManager(new LinearLayoutManager(this));
-        petsList.setAdapter(new PetsAdapter());
 
         initialize();
     }
@@ -84,7 +83,8 @@ public class MainActivity extends AppCompatActivity {
                     if (response.isSuccessful()) {
                         User user = response.body();
 
-                        welcome.setText("Bienbenido "+user.getUsernames());
+                        welcome.setText("Bienvenido "+user.getUsernames());
+                        petsList.setAdapter(new PetsAdapter(user.getUsernames(), user.getUseremail()));
 
                         List<Pet> pets = user.getPets();
 

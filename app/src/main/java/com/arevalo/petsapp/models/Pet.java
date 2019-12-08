@@ -2,23 +2,23 @@ package com.arevalo.petsapp.models;
 
 public class Pet {
 
-    private Long petid;
-    private String petname, petrace, petage, peruser, petimage;
+    private Long petid, petuser;
+    private String petname, petrace, petage, petimage;
 
-    public Pet(Long petid, String petname, String petrace, String petage, String peruser) {
+    public Pet(Long petid, String petname, String petrace, String petage, Long petuser) {
         this.petid = petid;
         this.petname = petname;
         this.petrace = petrace;
         this.petage = petage;
-        this.peruser = peruser;
+        this.petuser = petuser;
     }
 
-    public Pet(Long petid, String petname, String petrace, String petage, String peruser, String petimage) {
+    public Pet(Long petid, String petname, String petrace, String petage, Long petuser, String petimage) {
         this.petid = petid;
         this.petname = petname;
         this.petrace = petrace;
         this.petage = petage;
-        this.peruser = peruser;
+        this.petuser = petuser;
         this.petimage = petimage;
     }
 
@@ -54,12 +54,12 @@ public class Pet {
         this.petage = petage;
     }
 
-    public String getPeruser() {
-        return peruser;
+    public Long getPetuser() {
+        return petuser;
     }
 
-    public void setPeruser(String peruser) {
-        this.peruser = peruser;
+    public void setPetuser(Long petuser) {
+        this.petuser = petuser;
     }
 
     public String getPetimage() {
