@@ -77,6 +77,11 @@
                     android:textSize="16sp"
                     tools:text="Email:"/>
 
+                <ImageView
+                    android:id="@+id/qr_code"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"/>
+
             </LinearLayout>
 
         </RelativeLayout>

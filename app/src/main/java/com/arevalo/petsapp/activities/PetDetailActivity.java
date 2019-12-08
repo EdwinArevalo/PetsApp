@@ -3,6 +3,7 @@ package com.arevalo.petsapp.activities;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.SharedPreferences;
+import android.graphics.Bitmap;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.util.Log;
@@ -17,10 +18,13 @@ import com.arevalo.petsapp.models.Pet;
 import com.arevalo.petsapp.models.User;
 import com.arevalo.petsapp.services.ApiService;
 import com.arevalo.petsapp.services.ApiServiceGenerator;
+import com.google.zxing.WriterException;
 import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
+import androidmads.library.qrgenearator.QRGContents;
+import androidmads.library.qrgenearator.QRGEncoder;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -29,7 +33,7 @@ public class PetDetailActivity extends AppCompatActivity {
 
     private static final String TAG = PetDetailActivity.class.getSimpleName();
 
-    private ImageView image;
+    private ImageView image, qrimage;
 
     private TextView name_text, race_text, age_text, owner_text, email_text;
 
@@ -42,6 +46,7 @@ public class PetDetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_pet_detail);
 
         image = findViewById(R.id.image);
+        qrimage = findViewById(R.id.qr_code);
         name_text = findViewById(R.id.name_text);
         race_text = findViewById(R.id.race_text);
         age_text = findViewById(R.id.age_text);
@@ -81,6 +86,17 @@ public class PetDetailActivity extends AppCompatActivity {
                         name_text.setText(pet.getPetname());
                         race_text.setText("Raza: " + pet.getPetrace());
                         age_text.setText("Edad: " + pet.getPetage());
+
+                        QRGEncoder qrgEncoder = new QRGEncoder(
+                                String.valueOf(pet.getPetid()), null,
+                                QRGContents.Type.TEXT,
+                                500);
+                        try {
+                            Bitmap bitmap = qrgEncoder.encodeAsBitmap();
+                            qrimage.setImageBitmap(bitmap);
+                        } catch (WriterException e) {
+                            Log.v(TAG, e.toString());
+                        }
 
                         initializeOwnerData(pet.getPetuser());
 
